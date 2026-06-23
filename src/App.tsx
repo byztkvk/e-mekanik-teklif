@@ -798,25 +798,17 @@ export default function App() {
     const activeCustom = calculatedItems.customItems.filter(item => item.included);
     const totalActive = [...activeDb, ...activeCustom];
 
-    // We want to chunk active items per page.
-    // The first page is the COVER sheet.
-    // Subsequent pages contain the table.
-    // The last page contains notes, calculations, and signatures.
-    // Let's decide how many items fit per page. On a standard A4 page:
-    // With header and footer, we can safely fit around 18 item rows in a clean table.
-    // Let's divide totalActive items into groups.
-    const itemsPerPage = 18;
+    // Safe, fixed items limit per page to prevent text wrap overflows
+    const itemsPerPage = 11;
     const itemChunks: (ProposalItemState & { itemTotal: number })[][] = [];
     
     for (let i = 0; i < totalActive.length; i += itemsPerPage) {
       itemChunks.push(totalActive.slice(i, i + itemsPerPage));
     }
 
-    // Determine if the last chunk has enough room for notes & calculations & signatures.
-    // Notes + Calcs + Signatures take about 50% of an A4 page.
-    // If the last page chunk has > 9 items, it will look cluttered.
-    // In that case, let's make an extra page just for calculations, notes, and signatures.
-    const lastChunkFitsSummary = itemChunks.length > 0 && itemChunks[itemChunks.length - 1].length <= 9;
+    const lastPageItemsCount = itemChunks.length > 0 ? itemChunks[itemChunks.length - 1].length : 0;
+    // If the last page has 5 or fewer items, the summary fits on the same page.
+    const lastChunkFitsSummary = itemChunks.length > 0 && lastPageItemsCount <= 5;
     
     return {
       chunks: itemChunks,
@@ -824,6 +816,17 @@ export default function App() {
       totalPages: 1 + itemChunks.length + (lastChunkFitsSummary ? 0 : 1) // Cover + Chunks + Summary (if separate)
     };
   }, [calculatedItems, proposalType]);
+
+  // Helper to get correct starting index for numbering across pages
+  const getChunkStartIndex = (chunkIdx: number) => {
+    let start = 0;
+    for (let i = 0; i < chunkIdx; i++) {
+      if (pdfPagesData.chunks[i]) {
+        start += pdfPagesData.chunks[i].length;
+      }
+    }
+    return start;
+  };
 
   // PDF Export Trigger
   const handleDownloadPDF = async () => {
@@ -2039,7 +2042,7 @@ export default function App() {
                               {chunk.map((item, idx) => (
                                 <tr key={item.id}>
                                   <td style={{ textAlign: 'center', width: '25px' }}>
-                                    {chunkIdx * pdfPagesData.chunks[0].length + idx + 1}
+                                    {getChunkStartIndex(chunkIdx) + idx + 1}
                                   </td>
                                   <td style={{ fontWeight: 600, width: '220px' }}>
                                     {item.name}
