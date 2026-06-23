@@ -1371,7 +1371,14 @@ export default function App() {
                                 </label>
                               </td>
                               <td className="col-name">
-                                <div style={{ fontWeight: 600 }}>{item.name}</div>
+                                <input 
+                                  type="text"
+                                  value={item.name}
+                                  onChange={(e) => handleItemPropChange(item.id, 'name', e.target.value)}
+                                  className="table-input"
+                                  style={{ fontWeight: 600 }}
+                                  disabled={isExcluded}
+                                />
                                 {item.description && (
                                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px', whiteSpace: 'pre-line' }}>
                                     {item.description}
@@ -1489,7 +1496,14 @@ export default function App() {
                                 </label>
                               </td>
                               <td className="col-name">
-                                <div style={{ fontWeight: 600 }}>{item.name}</div>
+                                <input 
+                                  type="text"
+                                  value={item.name}
+                                  onChange={(e) => handleItemPropChange(item.id, 'name', e.target.value, true)}
+                                  className="table-input"
+                                  style={{ fontWeight: 600 }}
+                                  disabled={isExcluded}
+                                />
                               </td>
                               <td className="col-sorumlu">
                                 <select 
