@@ -994,6 +994,125 @@ export const productsDb: SheetCategory[] = [
         ]
       }
     ]
+  },
+  {
+    name: "HAVALANDIRMA TESİSATI",
+    categories: [
+      {
+        name: "HAVALANDIRMA TESİSATI EKİPMAN VE MALZEMELERİ",
+        items: [
+          {
+            id: "havalandirma-aksiyel-fan",
+            name: "AKSİYEL EGZOZ / TAZE HAVA FANLARI",
+            unit: "Set",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "AIR-A-U/800-6-32/7,5-4 50HZ / 300C - 2h (EGZOZ). Hava Debisi: 140.000 m³/h - 140.000 m3/h, Statik Basınç: 330 Pa. Aksesuarlar: Montaj Ayakları, Vibrasyon Takozları, Giriş konisi, Tel Kafes, Karşı Flanşları, 1 Adet Susturucu / Fan (L=1 çap - 100mm izolasyon)."
+          },
+          {
+            id: "havalandirma-kazan-fan",
+            name: "KAZAN DAİRESİ FAN",
+            unit: "Set",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Hava Debisi: 2000 m³/h."
+          },
+          {
+            id: "havalandirma-jet-fan",
+            name: "JET FANLAR",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ALDAĞ, NOVVES, AIRONN ve MUADİLİ",
+            description: "Tek Yönlü, Deflektör: Ayarlanabilir Tip, Hava Yönü: Tek Yönlü, Sıcaklık Sınıfı: F300 (300°C - 2 saat)."
+          },
+          {
+            id: "havalandirma-kontrol-paneli",
+            name: "SİSTEM KONTROL PANELİ - Jet Fan Kontrol Paneli",
+            unit: "Set",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ALDAĞ, NOVVES, AIRONN ve MUADİLİ",
+            description: "Sistem kontrol paneli / Jet fan kontrol paneli."
+          },
+          {
+            id: "havalandirma-muhendislik",
+            name: "MÜHENDİSLİK HİZMETLERİ ve PROJE YÖNETİM",
+            unit: "Set",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ALDAĞ, NOVVES, AIRONN ve MUADİLİ",
+            description: "Mühendislik hizmetleri ve proje yönetim."
+          },
+          {
+            id: "havalandirma-cfd",
+            name: "CFD - Akışkanlar Dinamiği Simülasyonu",
+            unit: "Set",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ALDAĞ, NOVVES, AIRONN ve MUADİLİ",
+            description: "1 Adet Yangın Pozisyonu + Günlük Havalandırma için Simülasyon."
+          },
+          {
+            id: "havalandirma-motorlu-damper",
+            name: "MOTORLU KAT DAMPERLERİ",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ALDAĞ, NOVVES, AIRONN ve MUADİLİ",
+            description: "Boyut: 60x150 mm."
+          },
+          {
+            id: "havalandirma-siginak-egzoz",
+            name: "Sığınak Duman Egzoz Fanı",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ALDAĞ, NOVVES, AIRONN ve MUADİLİ",
+            description: "Ve: 7000 m³/h - Hcd: 200 Pa."
+          },
+          {
+            id: "havalandirma-siginak-taze",
+            name: "Sığınak Taze Hava Fanı",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ALDAĞ, NOVVES, AIRONN ve MUADİLİ",
+            description: "G4 Filtre, Radyoaktif Filtre, Aktif Karbon Filtre. Ve: 7000 m³/h - Hcd: 200 Pa."
+          },
+          {
+            id: "havalandirma-hava-kanali",
+            name: "GALVANİZ SAC DİKDÖRTGEN HAVA KANALLARI",
+            unit: "m²",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "TEZCAN, ASSAN",
+            description: "Kalınlık: 0.6 mm."
+          },
+          {
+            id: "havalandirma-menfez",
+            name: "MENFEZLER, Tek Sıra Kanatlı",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ELEKTROTEKNİK, CENKAY",
+            description: "Boyut: 50x30."
+          },
+          {
+            id: "havalandirma-panjur",
+            name: "PANJURLAR (mm)",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "ELEKTROTEKNİK, CENKAY",
+            fiyat: 6510058,
+            description: "Havalandırma panjurları."
+          }
+        ]
+      }
+    ]
   }
 ];
 
