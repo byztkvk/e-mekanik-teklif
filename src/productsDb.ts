@@ -595,5 +595,405 @@ export const productsDb: SheetCategory[] = [
         ]
       }
     ]
+  },
+  {
+    name: "YANGIN TESİSATI",
+    categories: [
+      {
+        name: "SİYAH BORU-DİŞLİ VEYA KAYNAKLI İMALAT",
+        items: [
+          {
+            id: "yangin-siyah-boru-genel",
+            name: "Siyah Boru-Dişli Veya Kaynaklı İmalat",
+            unit: "Takım",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır. Çaplar: 1\", 1 1/4\", 1 1/2\", 2\", 2 1/2\", 3\", 4\", 5\", 8\".",
+            fiyat: 311700
+          },
+          {
+            id: "yangin-boru-montaj-bedeli",
+            name: "Bina içi vidalı döşenmiş boru montaj malzemesi bedeli",
+            unit: "Takım",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Tüm askı elemanları, fittingsler ve boru taşıyıcı profilleri montajı için gerekli tüm sarf malzemeleri bedel olarak."
+          },
+          {
+            id: "yangin-siyah-boru-1",
+            name: "Siyah Boru 1\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-114",
+            name: "Siyah Boru 1 1/4\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-112",
+            name: "Siyah Boru 1 1/2\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-2",
+            name: "Siyah Boru 2\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-212",
+            name: "Siyah Boru 2 1/2\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-3",
+            name: "Siyah Boru 3\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-4",
+            name: "Siyah Boru 4\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-5",
+            name: "Siyah Boru 5\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          },
+          {
+            id: "yangin-siyah-boru-8",
+            name: "Siyah Boru 8\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Boru birleştirmeleri 2\" ve üstündeki çaplarda, kaynaklı ile yapılacaktır. Sprinkler branşman bağlantılarında özel mekanik 'T' ler kullanılacaktır. 1 kat antipas vurulmuş olarak gelmek zorundadır."
+          }
+        ]
+      },
+      {
+        name: "BORU BOYANMASI",
+        items: [
+          {
+            id: "yangin-boru-boyanmasi",
+            name: "Boru Boyanması (Genel)",
+            unit: "Takım",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "2 kat yağlı boya ile siyah boruların boyanması, antipas boya üzerine ve sadece izole edilmeyen borular için. (1/2\" - 2\" arası, 2 1/2\" - 4\" arası, 5\" - 8\")",
+            fiyat: 75000
+          }
+        ]
+      },
+      {
+        name: "DİLATASYON VE DEPREM KOMPANSATÖRLERİ",
+        items: [
+          {
+            id: "yangin-dilatasyon-dn80",
+            name: "Deprem Kompansatörü DN80",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Kaynak boyunlu veya flanşlı kardan mafsallı."
+          },
+          {
+            id: "yangin-dilatasyon-dn100",
+            name: "Deprem Kompansatörü DN100",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Kaynak boyunlu veya flanşlı kardan mafsallı."
+          }
+        ]
+      },
+      {
+        name: "SPRİNK",
+        items: [
+          {
+            id: "yangin-sprink-upright",
+            name: "Sprink (Upright Normal Tepkimeli)",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "UPRIGHT NORMAL TEPKİMELİ 1/2\" Orifis, 1/2\" NPT 68 C pirinç K:80, TSE onaylı.",
+            fiyat: 60000
+          }
+        ]
+      },
+      {
+        name: "YANGIN DOLABI",
+        items: [
+          {
+            id: "yangin-dolabi-tip",
+            name: "Yangın Dolabı",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Sıva üstü veya sıva altı tip, gömme metal kapaklı, TS EN671-1. 2\" landing valfli. Hortum yuvarlak yarı sert TS EN 694 normuna uygun çapı 25 mm. Hortum boyu: 30 m.",
+            fiyat: 225000
+          }
+        ]
+      },
+      {
+        name: "İZLEME ANAHTARLI KELEBEK VANA",
+        items: [
+          {
+            id: "yangin-izleme-vana-212",
+            name: "İzleme Anahtarlı Kelebek Vana 2 1/2\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "UL, FM onaylı, açık, kapalı konum bilgisini otomasyon sistemine aktarabilen, yivli bağlantılı, redüktörlü pik döküm gövdeli, EPDM contalı tip kelebek vana PN 16. Çalışma basıncı: 12 bar, Max test basıncı: 24 bar, Çalışma sıcaklığı: 120 C."
+          },
+          {
+            id: "yangin-izleme-vana-4",
+            name: "İzleme Anahtarlı Kelebek Vana 4\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "UL, FM onaylı, açık, kapalı konum bilgisini otomasyon sistemine aktarabilen, yivli bağlantılı, redüktörlü pik döküm gövdeli, EPDM contalı tip kelebek vana PN 16. Çalışma basıncı: 12 bar, Max test basıncı: 24 bar, Çalışma sıcaklığı: 120 C."
+          },
+          {
+            id: "yangin-izleme-vana-8",
+            name: "İzleme Anahtarlı Kelebek Vana 8\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "UL, FM onaylı, açık, kapalı konum bilgisini otomasyon sistemine aktarabilen, yivli bağlantılı, redüktörlü pik döküm gövdeli, EPDM contalı tip kelebek vana PN 16. Çalışma basıncı: 12 bar, Max test basıncı: 24 bar, Çalışma sıcaklığı: 120 C."
+          }
+        ]
+      },
+      {
+        name: "DISCO TİP ÇEK VALF",
+        items: [
+          {
+            id: "yangin-disco-cek-valf-dn100",
+            name: "Disco Tip Çek Valf DN100",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "İki flanş arasına sıkıştırılan yay geri itmeli ve tablalı tip DN 100 ve altı bronz gövdeli üstü pik döküm, PN 25."
+          }
+        ]
+      },
+      {
+        name: "FLOWSWITCH (AKIŞ ANAHTARI)",
+        items: [
+          {
+            id: "yangin-flowswitch-212",
+            name: "Flowswitch (Akış Anahtarı) 2 1/2\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Yangın tesisatındaki su akışını algılayıp yangın alarm paneline ihbar göndermek amacıyla UL, FM onaylı."
+          },
+          {
+            id: "yangin-flowswitch-5",
+            name: "Flowswitch (Akış Anahtarı) 5\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Yangın tesisatındaki su akışını algılayıp yangın alarm paneline ihbar göndermek amacıyla UL, FM onaylı."
+          },
+          {
+            id: "yangin-flowswitch-8",
+            name: "Flowswitch (Akış Anahtarı) 8\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Yangın tesisatındaki su akışını algılayıp yangın alarm paneline ihbar göndermek amacıyla UL, FM onaylı."
+          }
+        ]
+      },
+      {
+        name: "MANOMETRE",
+        items: [
+          {
+            id: "yangin-manometre-komple",
+            name: "Manometre Musluğu ile Komple Manometre",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "3 ağızlı manometre musluğu ile komple (demir tozlu) Ø125 MANOMETRE ALT ÇIKIŞLI (0-16 BAR) METAL GÖVDE METAL KAPAK."
+          }
+        ]
+      },
+      {
+        name: "TEST VE DRENAJ VANASI",
+        items: [
+          {
+            id: "yangin-test-drenaj-114",
+            name: "Test ve Drenaj Vanası 1 1/4\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Test ve drenaj yapabilme özellikli gözetleme camlı, 1/2\" orifis çaplı, pirinç Gövdeli, UL LİSTELİ, FM ONAYLI."
+          }
+        ]
+      },
+      {
+        name: "İTFAİYE BAĞLANTI AĞZI",
+        items: [
+          {
+            id: "yangin-itfaiye-baglanti",
+            name: "İtfaiye Bağlantı Ağzı",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Yangın tesisatında kullanılmak üzere, UL, FM onaylı yerel itfaiye normlarına uygun bronzdan 2 adet bağlantı ağzı, otomatik boşaltmalı tip çek valfi ile birlikte, arka plakası ve itfaiye bilgi levhası dahil (2 x 2 1/2\" ağızlı - DN 100).",
+            fiyat: 144720
+          }
+        ]
+      },
+      {
+        name: "İTFAİYE SU ALMA AĞZI",
+        items: [
+          {
+            id: "yangin-itfaiye-su-alma-212",
+            name: "İtfaiye Su Alma Ağzı 2 1/2\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "DIN normlarına uygun 2 1/2\" bağlantı ağızlı, storz kaplinli, ucunda 2 1/2\" x 2\" rakor ve kapatma kapaklı."
+          }
+        ]
+      },
+      {
+        name: "YANGIN POMPA GRUBU",
+        items: [
+          {
+            id: "yangin-pompa-grubu-set",
+            name: "Yangın Pompa Grubu",
+            unit: "Set",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "1 ASIL 1 YEDEK, ELEKTRİKLİ.",
+            fiyat: 600000
+          }
+        ]
+      },
+      {
+        name: "YÜKSELEN MİLLİ SÜRGÜLÜ VANA",
+        items: [
+          {
+            id: "yangin-milli-surgulu-vana-8",
+            name: "Yükselen Milli Sürgülü Vana 8\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Yangın tesisatı depo emişlerinde kullanılmak üzere, açık - kapalı konum bilgisini otomasyon sistemine aktarabilen ( izlemeli tip ) UL, FM onaylı, pik döküm gövdeli vana. Çalışma basıncı: 12 bar, Max test basıncı: 24 bar, Çalışma sıcaklığı: 120 C.",
+            fiyat: 62000
+          }
+        ]
+      },
+      {
+        name: "ISLAK ALARM VANA SİSTEMİ",
+        items: [
+          {
+            id: "yangin-islak-alarm-8",
+            name: "Islak Alarm Vana Sistemi 8\"",
+            unit: "Set",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Çek valfi, geciktirme hücresi, mekanik alarm sistemi vb. ile komple, yivli bağlantılı, UL LİSTELİ, FM ONAYLI."
+          }
+        ]
+      },
+      {
+        name: "KOLLEKTÖR İMALATI",
+        items: [
+          {
+            id: "yangin-kollektor-10",
+            name: "Kollektör İmalatı 10\"",
+            unit: "Metre",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Siyah borudan, bombeli kollektör imalatı, kurt ağızları dahil."
+          }
+        ]
+      },
+      {
+        name: "TEST SAYACI",
+        items: [
+          {
+            id: "yangin-test-sayaci-dn150",
+            name: "Test Sayacı DN150",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Yangın pompa debilerini test etmede kullanılmak üzere, UL, FM onaylı."
+          }
+        ]
+      },
+      {
+        name: "RELIEF VANA",
+        items: [
+          {
+            id: "yangin-relief-vana-8",
+            name: "Relief Vana 8\"",
+            unit: "Adet",
+            defaultQty: 1,
+            sorumlu: "YÜKLENİCİ",
+            marka: "",
+            description: "Yangın tesisatında pompa çıkışında kullanılmak üzere, UL, FM onaylı."
+          }
+        ]
+      }
+    ]
   }
 ];
+
