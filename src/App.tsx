@@ -799,7 +799,7 @@ export default function App() {
     const totalActive = [...activeDb, ...activeCustom];
 
     // Safe, fixed items limit per page to prevent text wrap overflows
-    const itemsPerPage = 11;
+    const itemsPerPage = 8;
     const itemChunks: (ProposalItemState & { itemTotal: number })[][] = [];
     
     for (let i = 0; i < totalActive.length; i += itemsPerPage) {
@@ -807,8 +807,8 @@ export default function App() {
     }
 
     const lastPageItemsCount = itemChunks.length > 0 ? itemChunks[itemChunks.length - 1].length : 0;
-    // If the last page has 5 or fewer items, the summary fits on the same page.
-    const lastChunkFitsSummary = itemChunks.length > 0 && lastPageItemsCount <= 5;
+    // If the last page has 3 or fewer items, the summary fits on the same page.
+    const lastChunkFitsSummary = itemChunks.length > 0 && lastPageItemsCount <= 3;
     
     return {
       chunks: itemChunks,
