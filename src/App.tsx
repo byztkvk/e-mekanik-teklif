@@ -61,6 +61,7 @@ interface SavedTemplate {
   itemsState: Record<string, ProposalItemState>;
   notes: string[];
   customItems?: ProposalItemState[];
+  customTabs?: string[];
   proposalType?: 'detailed' | 'simple';
   simpleScopeItems?: string[];
   simplePricing?: {
@@ -247,6 +248,9 @@ export default function App() {
   // Custom items added by the user
   const [customItems, setCustomItems] = useState<ProposalItemState[]>([]);
   
+  // Custom categories/tabs added by the user
+  const [customTabs, setCustomTabs] = useState<string[]>([]);
+  
   // Templates state
   const [savedTemplates, setSavedTemplates] = useState<SavedTemplate[]>([]);
   const [saveTemplateName, setSaveTemplateName] = useState<string>("");
@@ -317,6 +321,7 @@ export default function App() {
         if (parsed.simplePayment) setSimplePayment(parsed.simplePayment);
         if (parsed.simpleSalutation) setSimpleSalutation(parsed.simpleSalutation);
         if (parsed.simpleProjectTypeText) setSimpleProjectTypeText(parsed.simpleProjectTypeText);
+        if (parsed.customTabs) setCustomTabs(parsed.customTabs);
       } catch (e) {
         setItemsState(initialState);
       }
@@ -354,13 +359,15 @@ export default function App() {
         simplePricing,
         simplePayment,
         simpleSalutation,
-        simpleProjectTypeText
+        simpleProjectTypeText,
+        customTabs
       };
       localStorage.setItem('em_current_proposal', JSON.stringify(dataToSave));
     }
   }, [
     clientInfo, currency, kdvRate, kdvIncluded, itemsState, notes, customItems,
-    proposalType, simpleScopeItems, simplePricing, simplePayment, simpleSalutation, simpleProjectTypeText
+    proposalType, simpleScopeItems, simplePricing, simplePayment, simpleSalutation, simpleProjectTypeText,
+    customTabs
   ]);
 
   // Toast helper
@@ -372,6 +379,12 @@ export default function App() {
   };
 
   // Currency symbols map
+  // Tab list (default + custom)
+  const allTabs = useMemo(() => {
+    const dbTabs = productsDb.map(sheet => sheet.name);
+    return [...dbTabs, ...customTabs];
+  }, [customTabs]);
+
   const currencySymbol = useMemo(() => {
     switch (currency) {
       case "USD": return "$";
@@ -680,11 +693,41 @@ export default function App() {
     showToast("Özel ürün silindi.", "danger");
   };
 
+  // Add custom tab
+  const handleAddNewTab = () => {
+    const name = window.prompt("Yeni Teklif Sekmesi / Kategori Adı girin (Örn: YANGIN TESİSATI, HAVALANDIRMA):");
+    if (name && name.trim()) {
+      const cleanName = name.trim().toUpperCase();
+      if (allTabs.includes(cleanName)) {
+        alert("Bu isimde bir kategori zaten mevcut!");
+        return;
+      }
+      setCustomTabs(prev => [...prev, cleanName]);
+      setActiveTab(cleanName);
+      showToast(`"${cleanName}" kategorisi eklendi.`);
+    }
+  };
+
+  // Delete custom tab
+  const handleDeleteCustomTab = (tabName: string) => {
+    const hasItems = customItems.some(item => item.sheetName === tabName);
+    if (hasItems) {
+      if (!window.confirm(`"${tabName}" kategorisi içerisinde eklenmiş özel ürünler bulunuyor. Kategoriyi ve içindeki tüm ürünleri silmek istediğinize emin misiniz?`)) {
+        return;
+      }
+    }
+    setCustomTabs(prev => prev.filter(t => t !== tabName));
+    setCustomItems(prev => prev.filter(item => item.sheetName !== tabName));
+    setActiveTab("SIHHİ TESİSAT");
+    showToast(`"${tabName}" kategorisi silindi.`, "danger");
+  };
+
   // Reset all state to defaults
   const handleResetForm = () => {
     if (window.confirm("Tüm teklif verilerini sıfırlamak istediğinize emin misiniz?")) {
       localStorage.removeItem('em_current_proposal');
       setCustomItems([]);
+      setCustomTabs([]);
       setNotes([
         "Fiyatlarımıza KDV dâhil değildir.",
         "İnşai işlemler (kırım, harç, sıva vb.) İşveren'e aittir.",
@@ -727,6 +770,7 @@ export default function App() {
       itemsState,
       notes,
       customItems,
+      customTabs,
       proposalType,
       simpleScopeItems,
       simplePricing,
@@ -752,6 +796,7 @@ export default function App() {
       setItemsState(tpl.itemsState);
       setNotes(tpl.notes);
       setCustomItems(tpl.customItems || []);
+      setCustomTabs(tpl.customTabs || []);
       setProposalType(tpl.proposalType || 'detailed');
       setSimpleScopeItems(tpl.simpleScopeItems || [
         "SIHHİ TESİSAT (PPRC, PVC, OTOPARK ALT TOPLAMA, YAĞMUR SUYU İNİŞLERİ)",
@@ -1177,16 +1222,36 @@ export default function App() {
           {proposalType === 'detailed' ? (
             <>
               {/* Tab bar switch */}
-              <div className="tab-container">
-                {productsDb.map(sheet => (
+              <div className="tab-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', padding: '0.35rem', alignItems: 'center' }}>
+                {allTabs.map(tabName => (
                   <button 
-                    key={sheet.name}
-                    onClick={() => setActiveTab(sheet.name)}
-                    className={`tab-btn ${activeTab === sheet.name ? 'active' : ''}`}
+                    key={tabName}
+                    onClick={() => setActiveTab(tabName)}
+                    className={`tab-btn ${activeTab === tabName ? 'active' : ''}`}
+                    style={{ flex: 'none' }}
                   >
-                    {sheet.name}
+                    {tabName}
                   </button>
                 ))}
+                <button 
+                  onClick={handleAddNewTab}
+                  className="btn btn-secondary tab-btn"
+                  style={{ 
+                    padding: '0.5rem 0.75rem', 
+                    fontSize: '0.85rem', 
+                    flex: 'none', 
+                    background: 'rgba(255,62,29,0.15)', 
+                    borderColor: 'rgba(255,62,29,0.3)', 
+                    color: 'var(--color-primary)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
+                  title="Yeni Teklif Sekmesi / Kategori Ekle"
+                >
+                  <Plus size={14} />
+                  Yeni Sekme Ekle
+                </button>
               </div>
 
               {/* Table filters */}
@@ -1217,15 +1282,35 @@ export default function App() {
                   <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Sadece Seçilenleri Göster</span>
                 </div>
 
+                {customTabs.includes(activeTab) && (
+                  <button 
+                    onClick={() => handleDeleteCustomTab(activeTab)}
+                    className="btn btn-danger"
+                    style={{ marginLeft: searchQuery ? 'auto' : '1rem' }}
+                  >
+                    <Trash2 size={16} />
+                    Kategoriyi Sil
+                  </button>
+                )}
+
                 <button 
                   onClick={handleResetForm}
                   className="btn btn-danger"
-                  style={{ marginLeft: 'auto' }}
+                  style={{ marginLeft: customTabs.includes(activeTab) ? '0.5rem' : 'auto' }}
                 >
                   <RotateCcw size={16} />
                   Tüm Veriyi Sıfırla
                 </button>
               </div>
+
+              {/* Message for custom/empty categories */}
+              {(!filteredProductsDb || filteredProductsDb.categories.length === 0) && activeTabCustomItems.length === 0 && (
+                <div className="glass-panel" style={{ padding: '2rem', textAlign: 'center', marginBottom: '1.5rem' }}>
+                  <p style={{ color: 'var(--text-muted)', margin: 0, fontSize: '0.95rem' }}>
+                    Bu kategoride henüz malzeme bulunmuyor. Aşağıdaki "Yeni Ürün / İşçilik Ekle" formunu kullanarak bu kategoriye malzeme ekleyebilirsiniz.
+                  </p>
+                </div>
+              )}
 
               {/* Active sheet items database */}
               {filteredProductsDb && filteredProductsDb.categories.map(cat => (
